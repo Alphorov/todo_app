@@ -47,12 +47,12 @@ class _SearchNoteScopeState extends State<SearchNoteScope> {
     super.initState();
   }
 
-  void filterNotes(String query, List<NoteModel> notes) {
+  void filterNotes(String query) {
     setState(() {
       if (query.isNotEmpty) {
-        noteList.addAll(notes.where((note) => note.title.contains(query)));
+        noteList.addAll(noteList.where((note) => note.title.contains(query)));
       } else {
-        noteList.addAll(notes);
+        noteList.addAll(noteList);
       }
     });
   }
