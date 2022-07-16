@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:todo/src/features/settings/widgets/font_size_change.dart';
-import 'package:todo/src/features/settings/widgets/theme_swap.dart';
+import 'package:todo/src/features/settings/widget/font_size_change.dart';
+import 'package:todo/src/features/settings/widget/theme_swap.dart';
 
 class SettigsScreen extends StatefulWidget {
   const SettigsScreen({Key? key}) : super(key: key);

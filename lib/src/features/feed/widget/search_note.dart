@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 
+import '../models/note_model.dart';
+
 class SearchNoteWidget extends StatefulWidget {
-  const SearchNoteWidget({Key? key}) : super(key: key);
+  const SearchNoteWidget({Key? key, required this.textController})
+      : super(key: key);
+  final TextEditingController textController;
 
   @override
   _SearchNoteWidgetState createState() => _SearchNoteWidgetState();
 }
 
 class _SearchNoteWidgetState extends State<SearchNoteWidget> {
-  final TextEditingController _textController = TextEditingController();
-
   @override
   void initState() {
-    _textController.addListener(() {});
+    widget.textController.addListener(() {});
     super.initState();
   }
 
@@ -39,7 +41,7 @@ class _SearchNoteWidgetState extends State<SearchNoteWidget> {
                 ),
                 width: MediaQuery.of(context).size.width * 0.7,
                 child: TextField(
-                  controller: _textController,
+                  controller: widget.textController,
                   cursorColor: Theme.of(context).colorScheme.secondary,
                   style: Theme.of(context).textTheme.headline6,
                   decoration: InputDecoration(
